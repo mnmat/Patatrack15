@@ -4,3 +4,4 @@
 *.pkl
 *.root
 __pycache__/
+.ipynb_checkpoints
