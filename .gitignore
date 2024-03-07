@@ -3,5 +3,6 @@
 *.png
 *.pkl
 *.root
+*.pyc
 __pycache__/
 .ipynb_checkpoints

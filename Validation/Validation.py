@@ -6,6 +6,7 @@ import mplhep as hep
 plt.style.use(hep.style.CMS)
 from pathlib import Path
 import pickle
+import os
 
 from .fit import fitCruijff, cruijff
 
@@ -74,9 +75,9 @@ plotsToSave = [plotFullEnergies, plotRatioOverCP]
 
 def doFullValidation(X, y, prediction,model_path):
     hists = write_histograms(X, y, prediction)
-    with open(Path(model_path).with_suffix(".hists.pkl"), "wb") as f:
+    with open(os.path.join(model_path,"hists.pkl"), "wb") as f:
         pickle.dump(hists, f)
     
     for plotFct in plotsToSave:
         plotFct(hists)
-        plt.savefig(Path(model_path).with_suffix("." + plotFct.__name__ + ".png"))
+        plt.savefig(os.path.join(model_path,plotFct.__name__ + ".png"))
