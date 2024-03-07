@@ -1,0 +1,6 @@
+# Ignore PDF, PNG, and Pickle files
+*.pdf
+*.png
+*.pkl
+*.root
+__pycache__/
