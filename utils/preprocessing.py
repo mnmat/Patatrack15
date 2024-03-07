@@ -138,7 +138,7 @@ class Preprocessor():
                     # Process shape Variables
                     for key in SHAPEVARIABLENAMES:
                         sv[key] = filterMaxShapeVariables(sv[key],f_idx)
-                    
+
                     # Write quantities
 
                     self.cp_energy += np.delete(cp_energy, f_idx).tolist()
